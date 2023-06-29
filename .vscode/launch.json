@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch NestJS",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start:dev"],
+      "cwd": "${workspaceFolder}/server",
+      "console": "integratedTerminal",
+      "restart": true,
+      "sourceMaps": true,
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Docker: Attach to Node",
+      "address": "localhost",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}/server", // Update the path to your project root
+      "remoteRoot": "./server" // Update the remote root path inside the container
+    }
+  ]
+}
