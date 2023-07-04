@@ -17,7 +17,8 @@ COPY . .
 EXPOSE 8000
 EXPOSE 9229
 
+RUN npm run build
 # Start the server in development mode
-CMD ["npm", "run", "start:debug","--", "0.0.0.0:9229"]
+CMD [ "node", "dist/main" ]
 
 

@@ -3,6 +3,30 @@
   "configurations": [
     {
       "type": "node",
+      "request": "attach",
+      "name": "Debug: thomas-nestjs",
+      "remoteRoot": "/server",
+      "localRoot": "${workspaceFolder}/server",
+      "protocol": "inspector",
+      "port": 9229,
+      "restart": true,
+      "address": "0.0.0.0",
+      "skipFiles": ["<node_internals>/**"]
+    }
+
+    // {
+    //   "name": "Docker: Attach to Node",
+    //   "type": "node",
+    //   "request": "attach",
+    //   "port": 9229,
+    //   "address": "localhost",
+    //   "localRoot": "${workspaceFolder}/server",
+    //   "remoteRoot": "/server",
+    //   "protocol": "inspector",
+    //   "restart": true
+    // },
+    {
+      "type": "node",
       "request": "launch",
       "name": "Launch NestJS",
       "runtimeExecutable": "npm",
@@ -13,15 +37,15 @@
       "sourceMaps": true,
       "internalConsoleOptions": "neverOpen",
       "skipFiles": ["<node_internals>/**"]
-    },
-    {
-      "type": "node",
-      "request": "attach",
-      "name": "Docker: Attach to Node",
-      "address": "localhost",
-      "port": 9229,
-      "localRoot": "${workspaceFolder}/server", // Update the path to your project root
-      "remoteRoot": "./server" // Update the remote root path inside the container
     }
+    // {
+    //   "type": "node",
+    //   "request": "attach",
+    //   "name": "Docker: Attach to Node",
+    //   "skipFiles": ["<node_internals>/**"],
+    //   "port": 9229
+    //   // "localRoot": "${workspaceFolder}/server", // Update the path to your project root
+    //   // "remoteRoot": "./server" // Update the remote root path inside the container
+    // }
   ]
 }

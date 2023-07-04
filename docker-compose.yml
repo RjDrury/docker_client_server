@@ -15,9 +15,13 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
+    command: npm run start:debug
     ports:
       - 8000:8000
       - 9229:9229
+    environment:
+      - NODE_ENV=development
+      - DEBUG_PORT=9229
     volumes:
       - ./server:/server
       - ./shared:/shared
